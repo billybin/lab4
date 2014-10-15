@@ -13,7 +13,7 @@ int main()
     int i,N;
     clock_t time1,time2;
     int *A=NULL;
-    printf("ÇëÊäÈëÊı¾İµÄ¸öÊı:");
+    printf("è¯·è¾“å…¥æ•°æ®çš„ä¸ªæ•°:");
     scanf("%d",&N);
     A=(int*)malloc(N*sizeof(int));
     for(i=0; i<N; i++)
@@ -27,7 +27,7 @@ int main()
     {
         printf("%d\n",A[i]);
     }*/
-    printf("\n¶ÑÅÅĞò%d¸öËæ»úÊı×ÖËùÓÃÊ±¼äÎª:%dºÁÃë\n",N,time2-time1);
+    printf("\nå †æ’åº%dä¸ªéšæœºæ•°å­—æ‰€ç”¨æ—¶é—´ä¸º:%dæ¯«ç§’\n",N,time2-time1);
     return 1;
 
 }
@@ -62,7 +62,9 @@ void max_heapify(int a[], int i, int heapsize)
         max_heapify(a, largerest, heapsize);
     }
 }
-
+public void printsttt(){
+        System.out.print("qweqwrqewtrdsaerty");
+    }
 void build_max_heap(int a[], int heapsize)
 {
     int i;
