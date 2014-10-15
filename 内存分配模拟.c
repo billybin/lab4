@@ -14,6 +14,7 @@ int main()
 {
     int i,count;
     printf("valid memory is:");
+    printf("qeerwrftrdestgsfdy");
     for(i=0;i<SIZE;i++)
     {
         printf("%d",i);
