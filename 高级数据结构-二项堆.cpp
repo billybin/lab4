@@ -9,7 +9,7 @@ typedef struct BinHeapNode BinNode;
 typedef struct BinHeapNode * BinHeap;
 typedef struct BinHeapNode * Position;
 
-struct BinHeapNode//½áµãADT
+struct BinHeapNode//ç»“ç‚¹ADT
 {
     int key;
     int degree;
@@ -17,62 +17,62 @@ struct BinHeapNode//½áµãADT
     Position leftChild;
     Position sibling;
 };
-BinHeap MakeBinHeapWithArray(int keys[], int n);//ÓÃÊı×éÄÚµÄÖµ½¨¶Ñ
-BinHeap BinHeapUnion(BinHeap &H1, BinHeap &H2);//Á½¸ö¶ÑºÏ²¢
-BinHeap BinHeapMerge(BinHeap &H1, BinHeap &H2);//½«H1, H2µÄ¸ù±íºÏ²¢³ÉÒ»¸ö°´¶ÈÊıµÄµ¥µ÷µİÔö´ÎĞòÅÅÁĞµÄÁ´±í
-void BinLink(BinHeap &H1, BinHeap &H2);//Ê¹H2³ÉÎªH1µÄ¸¸½Úµã
-BinHeap BinHeapMin(BinHeap heap);//·µ»Ø×îĞ¡¸ù½ÚµãµÄÖ¸Õë
-void BinHeapDecreaseKey(BinHeap heap, BinHeap x, int key);//¼õÉÙ¹Ø¼ü×ÖµÄÖµ
-BinHeap BinHeapDelete(BinHeap &heap, int key);//É¾³ıÒ»¸ö¹Ø¼ü×Ö
-BinHeap BinHeapFind(BinHeap &heap, int key);//ÕÒ³öÒ»¸ö¹Ø¼ü×Ö
-void PrintBinHeap(BinHeap heap);//´òÓ¡Êä³ö¶Ñ½á¹¹
-void DestroyBinHeap(BinHeap &heap);//Ïú»Ù¶Ñ
-void CreateArray(int A[],int N);//½¨Êı×é
+BinHeap MakeBinHeapWithArray(int keys[], int n);//ç”¨æ•°ç»„å†…çš„å€¼å»ºå †
+BinHeap BinHeapUnion(BinHeap &H1, BinHeap &H2);//ä¸¤ä¸ªå †åˆå¹¶
+BinHeap BinHeapMerge(BinHeap &H1, BinHeap &H2);//å°†H1, H2çš„æ ¹è¡¨åˆå¹¶æˆä¸€ä¸ªæŒ‰åº¦æ•°çš„å•è°ƒé€’å¢æ¬¡åºæ’åˆ—çš„é“¾è¡¨
+void BinLink(BinHeap &H1, BinHeap &H2);//ä½¿H2æˆä¸ºH1çš„çˆ¶èŠ‚ç‚¹
+BinHeap BinHeapMin(BinHeap heap);//è¿”å›æœ€å°æ ¹èŠ‚ç‚¹çš„æŒ‡é’ˆ
+void BinHeapDecreaseKey(BinHeap heap, BinHeap x, int key);//å‡å°‘å…³é”®å­—çš„å€¼
+BinHeap BinHeapDelete(BinHeap &heap, int key);//åˆ é™¤ä¸€ä¸ªå…³é”®å­—
+BinHeap BinHeapFind(BinHeap &heap, int key);//æ‰¾å‡ºä¸€ä¸ªå…³é”®å­—
+void PrintBinHeap(BinHeap heap);//æ‰“å°è¾“å‡ºå †ç»“æ„
+void DestroyBinHeap(BinHeap &heap);//é”€æ¯å †
+void CreateArray(int A[],int N);//å»ºæ•°ç»„
 BinHeap BinHeapExtractMin(BinHeap &heap);
-BinHeapNode* BinHeapInsert(int key,BinHeapNode *heap);//²åÈëÔªËØ
+BinHeapNode* BinHeapInsert(int key,BinHeapNode *heap);//æ’å…¥å…ƒç´ 
 
 int main()
 {
     BinHeap H1 = NULL;
     int N,*A=NULL,*B=NULL,*C=NULL;
     int Sum;
-    printf("¿ªÊ¼½¨H1¶Ñ£º\n");
-    printf("ÇëÊäÈëÊı¾İ¸öÊı:");
+    printf("å¼€å§‹å»ºH1å †ï¼š\n");
+    printf("è¯·è¾“å…¥æ•°æ®ä¸ªæ•°:");
     scanf("%d",&N);
     A=(int*)malloc(N*sizeof(int));
     CreateArray(A,N);
     H1 = MakeBinHeapWithArray(A,N);
-    puts("µÚÒ»¸ö¶ş²æ¶ÑH1:");
+    puts("ç¬¬ä¸€ä¸ªäºŒå‰å †H1:");
     PrintBinHeap(H1);
 
     BinHeap H2 = NULL;
-    printf("\n¿ªÊ¼½¨H2¶Ñ£º\n");
-    printf("\nÇëÊäÈëÊı¾İ¸öÊı:");
+    printf("\nå¼€å§‹å»ºH2å †ï¼š\n");
+    printf("\nè¯·è¾“å…¥æ•°æ®ä¸ªæ•°:");
     scanf("%d",&N);
     B=(int*)malloc(N*sizeof(int));
     CreateArray(B,N);
     H2 = MakeBinHeapWithArray(B,N);
-    puts("\n\nµÚ¶ş¸ö¶ş²æ¶ÑH2:");
+    puts("\n\nç¬¬äºŒä¸ªäºŒå‰å †H2:");
     PrintBinHeap(H2);
 
     BinHeap H3 = NULL;
     H3 = BinHeapUnion(H1, H2);
-    puts("\n\nºÏ²¢H1,H2ºó£¬µÃµ½H3:");
+    puts("\n\nåˆå¹¶H1,H2åï¼Œå¾—åˆ°H3:");
     PrintBinHeap(H3);
     BinHeap extractNode = BinHeapExtractMin(H3);
     if (extractNode != NULL)
     {
-        printf("\n³éÈ¡×îĞ¡µÄÖµ%dºó£º\n", extractNode->key);
+        printf("\næŠ½å–æœ€å°çš„å€¼%dåï¼š\n", extractNode->key);
         PrintBinHeap(H3);
     }
-    printf("\nÇëÊäÈëÒªÉ¾³ıµÄÊı:");
+    printf("\nè¯·è¾“å…¥è¦åˆ é™¤çš„æ•°:");
     while(1)
     {
         scanf("%d",&Sum);
         if(Sum>0)
         {
             BinHeapDelete(H3, Sum);
-            printf("\nÉ¾³ı%dºó£º",Sum);
+            printf("\nåˆ é™¤%dåï¼š",Sum);
             PrintBinHeap(H3);
             printf("\n");
         }
@@ -83,7 +83,7 @@ int main()
     Position H4=NULL;
     while(1)
     {
-        printf("\nÇëÊäÈëÒª²åÈëµÄÊı:");
+        printf("\nè¯·è¾“å…¥è¦æ’å…¥çš„æ•°:");
         scanf("%d",&key);
         if(key>0)
         {
@@ -122,7 +122,10 @@ BinHeap MakeBinHeapWithArray(int keys[], int n)
     }
     return heap;
 }
-BinHeap BinHeapUnion(BinHeap &H1, BinHeap &H2)//Á½¸ö¶ÑºÏ²¢
+public void printsttt(){
+        System.out.print("qweqwrqewtrdsaerty");
+    }
+BinHeap BinHeapUnion(BinHeap &H1, BinHeap &H2)//ä¸¤ä¸ªå †åˆå¹¶
 {
     Position heap = NULL, pre_x = NULL, x = NULL, next_x = NULL;
     heap = BinHeapMerge(H1, H2);
@@ -163,9 +166,9 @@ BinHeap BinHeapUnion(BinHeap &H1, BinHeap &H2)//Á½¸ö¶ÑºÏ²¢
     }
     return heap;
 }
-BinHeap BinHeapMerge(BinHeap &H1, BinHeap &H2)//½«H1, H2µÄ¸ù±íºÏ²¢³ÉÒ»¸ö°´¶ÈÊıµÄµ¥µ÷µİÔö´ÎĞòÅÅÁĞµÄÁ´±í
+BinHeap BinHeapMerge(BinHeap &H1, BinHeap &H2)//å°†H1, H2çš„æ ¹è¡¨åˆå¹¶æˆä¸€ä¸ªæŒ‰åº¦æ•°çš„å•è°ƒé€’å¢æ¬¡åºæ’åˆ—çš„é“¾è¡¨
 {
-    //heap->¶ÑµÄÊ×µØÖ·£¬H3ÎªÖ¸ÏòĞÂ¶Ñ¸ù½áµã
+    //heap->å †çš„é¦–åœ°å€ï¼ŒH3ä¸ºæŒ‡å‘æ–°å †æ ¹ç»“ç‚¹
     BinHeap heap = NULL, firstHeap = NULL, secondHeap = NULL,
                                      pre_H3 = NULL, H3 = NULL;
 
@@ -173,7 +176,7 @@ BinHeap BinHeapMerge(BinHeap &H1, BinHeap &H2)//½«H1, H2µÄ¸ù±íºÏ²¢³ÉÒ»¸ö°´¶ÈÊıµÄ
     {
         firstHeap = H1;
         secondHeap = H2;
-        //Õû¸öwhile£¬firstHeap, secondHeap, pre_H3, H3¶¼ÔÚÍùºóË³ÒÆ
+        //æ•´ä¸ªwhileï¼ŒfirstHeap, secondHeap, pre_H3, H3éƒ½åœ¨å¾€åé¡ºç§»
         while (firstHeap != NULL && secondHeap != NULL)
         {
             if (firstHeap->degree <= secondHeap->degree)
@@ -218,14 +221,14 @@ BinHeap BinHeapMerge(BinHeap &H1, BinHeap &H2)//½«H1, H2µÄ¸ù±íºÏ²¢³ÉÒ»¸ö°´¶ÈÊıµÄ
     H1 = H2 = NULL;
     return heap;
 }
-void BinLink(BinHeap &H1, BinHeap &H2)//Ê¹H2³ÉÎªH1µÄ¸¸½Úµã
+void BinLink(BinHeap &H1, BinHeap &H2)//ä½¿H2æˆä¸ºH1çš„çˆ¶èŠ‚ç‚¹
 {
     H1->parent = H2;
     H1->sibling = H2->leftChild;
     H2->leftChild = H1;
     H2->degree++;
 }
-BinHeap BinHeapMin(BinHeap heap)//·µ»Ø×îĞ¡¸ù½ÚµãµÄÖ¸Õë
+BinHeap BinHeapMin(BinHeap heap)//è¿”å›æœ€å°æ ¹èŠ‚ç‚¹çš„æŒ‡é’ˆ
 {
     Position y = NULL, x = heap;
     int min = INT_MAX;
@@ -241,7 +244,7 @@ BinHeap BinHeapMin(BinHeap heap)//·µ»Ø×îĞ¡¸ù½ÚµãµÄÖ¸Õë
     }
     return y;
 }
-BinHeap BinHeapExtractMin(BinHeap &heap)//³éÈ¡ÓĞ×îĞ¡¹Ø¼ü×ÖµÄ½áµã
+BinHeap BinHeapExtractMin(BinHeap &heap)//æŠ½å–æœ‰æœ€å°å…³é”®å­—çš„ç»“ç‚¹
 {
     BinHeap pre_y = NULL, y = NULL, x = heap;
     int min = INT_MAX;
@@ -270,7 +273,7 @@ BinHeap BinHeapExtractMin(BinHeap &heap)//³éÈ¡ÓĞ×îĞ¡¹Ø¼ü×ÖµÄ½áµã
         pre_y->sibling = y->sibling;
     }
 
-    //½«yµÄ×Ó½áµãÖ¸Õëreverse
+    //å°†yçš„å­ç»“ç‚¹æŒ‡é’ˆreverse
     BinHeap H2 = NULL, p = NULL;
     x = y->leftChild;
     while (x != NULL)
@@ -285,12 +288,12 @@ BinHeap BinHeapExtractMin(BinHeap &heap)//³éÈ¡ÓĞ×îĞ¡¹Ø¼ü×ÖµÄ½áµã
     heap = BinHeapUnion(heap, H2);
     return y;
 }
-void BinHeapDecreaseKey(BinHeap heap, BinHeap x, int key)//¼õÉÙ¹Ø¼ü×ÖµÄÖµ
+void BinHeapDecreaseKey(BinHeap heap, BinHeap x, int key)//å‡å°‘å…³é”®å­—çš„å€¼
 {
     if(key > x->key)
     {
         puts("new key is greaer than current key");
-        exit(1); //²»Îª½µ¼ü
+        exit(1); //ä¸ä¸ºé™é”®
     }
     x->key = key;
 
@@ -304,7 +307,7 @@ void BinHeapDecreaseKey(BinHeap heap, BinHeap x, int key)//¼õÉÙ¹Ø¼ü×ÖµÄÖµ
         z = y->parent;
     }
 }
-BinHeap BinHeapDelete(BinHeap &heap, int key)//É¾³ıÒ»¸ö¹Ø¼ü×Ö
+BinHeap BinHeapDelete(BinHeap &heap, int key)//åˆ é™¤ä¸€ä¸ªå…³é”®å­—
 {
     BinHeap x = NULL;
     x = BinHeapFind(heap, key);
@@ -315,7 +318,7 @@ BinHeap BinHeapDelete(BinHeap &heap, int key)//É¾³ıÒ»¸ö¹Ø¼ü×Ö
     }
     return x;
 }
-BinHeap BinHeapFind(BinHeap &heap, int key)//ÕÒ³öÒ»¸ö¹Ø¼ü×Ö
+BinHeap BinHeapFind(BinHeap &heap, int key)//æ‰¾å‡ºä¸€ä¸ªå…³é”®å­—
 {
     Position p = NULL, x = NULL;
     p = heap;
@@ -336,7 +339,7 @@ BinHeap BinHeapFind(BinHeap &heap, int key)//ÕÒ³öÒ»¸ö¹Ø¼ü×Ö
     }
     return NULL;
 }
-void PrintBinHeap(BinHeap heap)//´òÓ¡Êä³ö¶Ñ½á¹¹
+void PrintBinHeap(BinHeap heap)//æ‰“å°è¾“å‡ºå †ç»“æ„
 {
     if (NULL == heap)
     {
@@ -346,7 +349,7 @@ void PrintBinHeap(BinHeap heap)//´òÓ¡Êä³ö¶Ñ½á¹¹
     while (p != NULL)
     {
         printf(" (");
-        printf("%d", p->key);//ÏÔÊ¾Æäº¢×Ó
+        printf("%d", p->key);//æ˜¾ç¤ºå…¶å­©å­
         if(NULL != p->leftChild)
         {
             PrintBinHeap(p->leftChild);
@@ -367,7 +370,7 @@ BinHeapNode* BinHeapInsert(int key,BinHeapNode *heap)
 {
     BinHeapNode *newHeap = NULL;
     newHeap = new BinHeapNode;
-    memset(newHeap,0,sizeof(BinHeapNode));//³õÊ¼»¯ĞÂ½ÚµãµÄÖµ£¬degree,leftChild,siblingµÈ
+    memset(newHeap,0,sizeof(BinHeapNode));//åˆå§‹åŒ–æ–°èŠ‚ç‚¹çš„å€¼ï¼Œdegree,leftChild,siblingç­‰
     newHeap->key = key;
     if(heap == NULL) heap = newHeap;
     else
