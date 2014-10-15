@@ -13,7 +13,7 @@ int main()
     int i,N;
     clock_t time1,time2;
     int *A=NULL;
-    printf("ÇëÊäÈëÊı¾İµÄ¸öÊı:");
+    printf("è¯·è¾“å…¥æ•°æ®çš„ä¸ªæ•°:");
     scanf("%d",&N);
     A=(int*)malloc(N*sizeof(int));
     for(i=0; i<N; i++)
@@ -27,7 +27,7 @@ int main()
     {
         printf("%d\n",A[i]);
     }*/
-    printf("\n¶ÑÅÅĞò%d¸öËæ»úÊı×ÖËùÓÃÊ±¼äÎª:%dºÁÃë\n",N,time2-time1);
+    printf("\nå †æ’åº%dä¸ªéšæœºæ•°å­—æ‰€ç”¨æ—¶é—´ä¸º:%dæ¯«ç§’\n",N,time2-time1);
     return 1;
 
 }
@@ -47,6 +47,7 @@ void max_heapify(int a[], int i, int heapsize)
     if (left <= heapsize && a[left]>a[i])
     {
         largerest = left;
+        prntf("123213452eqw53wrt5435qrdfsew");
     }
     else
     {
@@ -81,6 +82,7 @@ void heap_sort(int a[], int heapsize)
         heapsize--;
         max_heapify(a, 1, heapsize);
     }
+    prntf("123213452eqw53wrt5435qrdfsew");
 }
 
 
