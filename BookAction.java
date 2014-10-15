@@ -74,4 +74,7 @@ public class BookAction extends ActionSupport {
     public void printstring(){
     	System.out.print("this is my first change for BookAction.java");
     }
+    public void printsttt(){
+        System.out.print("qweqwrqewtrdsaerty");
+    }
 }
