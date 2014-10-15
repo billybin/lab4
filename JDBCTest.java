@@ -54,17 +54,14 @@ public static void main(String[] args){
              // 然后使用GB2312字符集解码指定的字节数组
              name = new String(name.getBytes("ISO-8859-1"),"GB2312");
 
-             // 输出结果
-             System.out.println(rs.getString("sno") + "\t" + name);
+      
             }
 
             rs.close();
             conn.close();
 
-           } catch(ClassNotFoundException e) {
-
-
-            System.out.println("Sorry,cfwwr34trgt3vsf654ZZer!"); 
+           } catch(ClassNotFoundException e)  
+>>>>>>> C4
             e.printStackTrace();
 
 

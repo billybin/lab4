@@ -71,7 +71,4 @@ public class BookAction extends ActionSupport {
         }
         return SUCCESS;
     }
-    public void printstring(){
-    	System.out.print("thissdwtegvsawer5467yhnu7ZZr BookAction.java");
-    }
 }
