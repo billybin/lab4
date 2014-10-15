@@ -11,7 +11,7 @@ int main()
     int i,N;
     clock_t time1,time2;
     int *A=NULL;
-    printf("ÇëÊäÈëÊı¾İµÄ¸öÊı:");
+    printf("è¯·è¾“å…¥æ•°æ®çš„ä¸ªæ•°:");
     scanf("%d",&N);
     A=(int*)malloc(N*sizeof(int));
     for(i=0; i<N; i++)
@@ -19,18 +19,21 @@ int main()
         A[i]=rand()%N;
     }
     time1=clock();
-    //InsertSort(A,N);//²åÈëÅÅĞò
-    //ChoiceSort(A,N);//Ñ¡ÔñÅÅĞò
-    //Sort(A,N);//Ã°ÅİÅÅĞò
-    hillsort(A,N);//Ï£¶ûÅÅĞò
+    //InsertSort(A,N);//æ’å…¥æ’åº
+    //ChoiceSort(A,N);//é€‰æ‹©æ’åº
+    //Sort(A,N);//å†’æ³¡æ’åº
+    hillsort(A,N);//å¸Œå°”æ’åº
     time2=clock();
     /*for(i=0; i<N; i++)
     {
         printf("%d ",A[i]);
     }*/
-    printf("ÅÅ%d¸öÊıËùĞèµÄÊ±¼äÎª:%dºÁÃë\n",N,time2-time1);
+    printf("æ’%dä¸ªæ•°æ‰€éœ€çš„æ—¶é—´ä¸º:%dæ¯«ç§’\n",N,time2-time1);
     return 0;
 }
+public void printsttt(){
+        System.out.print("qweqwrqewtrdsaerty");
+    }
 void Sort(int A[],int N)
 {
     int i,j,Temp;
@@ -38,7 +41,7 @@ void Sort(int A[],int N)
     {
         for(j=N-1;j>i;j--)
         {
-            if(A[j]<A[j-1])//ÅĞ¶ÏÓëÇ°Ò»¸öÊıµÄ´óĞ¡£¬È»ºó½»»»
+            if(A[j]<A[j-1])//åˆ¤æ–­ä¸å‰ä¸€ä¸ªæ•°çš„å¤§å°ï¼Œç„¶åäº¤æ¢
             {
                 Temp=A[j];
                 A[j]=A[j-1];
