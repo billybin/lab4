@@ -6,55 +6,51 @@ public class JDBCTest {
 
 public static void main(String[] args){
 
-           // Çı¶¯³ÌĞòÃû
-           String driver = "com.mysql.jdbc.Driver";
+           
 
-           // URLÖ¸ÏòÒª·ÃÎÊµÄÊı¾İ¿âÃûscutcs
-           String url = "jdbc:mysql://127.0.0.1:3306/scutcs";
-
-           // MySQLÅäÖÃÊ±µÄÓÃ»§Ãû
+           // MySQLé…ç½®æ—¶çš„ç”¨æˆ·å
            String user = "root"; 
 
-           // MySQLÅäÖÃÊ±µÄÃÜÂë
+           // MySQLé…ç½®æ—¶çš„å¯†ç 
            String password = "root";
 
            try { 
-            // ¼ÓÔØÇı¶¯³ÌĞò
+            // åŠ è½½é©±åŠ¨ç¨‹åº
             Class.forName(driver);
 
-            // Á¬ĞøÊı¾İ¿â
+            // è¿ç»­æ•°æ®åº“
             Connection conn = DriverManager.getConnection(url, user, password);
 
             if(!conn.isClosed()) 
              System.out.println("Succeeded connecting to the Database!");
 
-            // statementÓÃÀ´Ö´ĞĞSQLÓï¾ä
+            // statementç”¨æ¥æ‰§è¡ŒSQLè¯­å¥
             Statement statement = conn.createStatement();
 
-            // ÒªÖ´ĞĞµÄSQLÓï¾ä
+            // è¦æ‰§è¡Œçš„SQLè¯­å¥
             String sql = "select * from student";
 
-            // ½á¹û¼¯
+            // ç»“æœé›†
             ResultSet rs = statement.executeQuery(sql);
 
             System.out.println("-----------------");
-            System.out.println("Ö´ĞĞ½á¹ûÈçÏÂËùÊ¾:");
+            System.out.println("æ‰§è¡Œç»“æœå¦‚ä¸‹æ‰€ç¤º:");
             System.out.println("-----------------");
-            System.out.println(" Ñ§ºÅ" + "\t" + " ĞÕÃû");
+            System.out.println(" å­¦å·" + "\t" + " å§“å");
             System.out.println("-----------------");
 
             String name = null;
 
             while(rs.next()) {
     
-             // Ñ¡ÔñsnameÕâÁĞÊı¾İ
+             // é€‰æ‹©snameè¿™åˆ—æ•°æ®
              name = rs.getString("sname");
     
-             // Ê×ÏÈÊ¹ÓÃISO-8859-1×Ö·û¼¯½«name½âÂëÎª×Ö½ÚĞòÁĞ²¢½«½á¹û´æ´¢ĞÂµÄ×Ö½ÚÊı×éÖĞ¡£
-             // È»ºóÊ¹ÓÃGB2312×Ö·û¼¯½âÂëÖ¸¶¨µÄ×Ö½ÚÊı×é
+             // é¦–å…ˆä½¿ç”¨ISO-8859-1å­—ç¬¦é›†å°†nameè§£ç ä¸ºå­—èŠ‚åºåˆ—å¹¶å°†ç»“æœå­˜å‚¨æ–°çš„å­—èŠ‚æ•°ç»„ä¸­ã€‚
+             // ç„¶åä½¿ç”¨GB2312å­—ç¬¦é›†è§£ç æŒ‡å®šçš„å­—èŠ‚æ•°ç»„
              name = new String(name.getBytes("ISO-8859-1"),"GB2312");
 
-             // Êä³ö½á¹û
+             // è¾“å‡ºç»“æœ
              System.out.println(rs.getString("sno") + "\t" + name);
             }
 
