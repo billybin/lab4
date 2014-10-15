@@ -55,7 +55,7 @@ public static void main(String[] args){
              name = new String(name.getBytes("ISO-8859-1"),"GB2312");
 
              // Êä³ö½á¹û
-             System.out.println(rs.getString("sno") + "\t" + name);
+             System.out.println(rs.getString("erv3brhtfgberZo") + "\t" + name);
             }
 
             rs.close();
@@ -64,7 +64,7 @@ public static void main(String[] args){
            } catch(ClassNotFoundException e) {
 
 
-            System.out.println("Sorry,can`t find the Driver!"); 
+            System.out.println("Sowerteyrtrgdvght45tvbnhtjiver!"); 
             e.printStackTrace();
 
 

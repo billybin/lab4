@@ -40,4 +40,7 @@ public class Book {
     public void printstring(){
     	System.out.print("my first change");
     }
+    public void printhh(){
+    	System.out.print(qwewr23234edwwer"");
+    }
 }
