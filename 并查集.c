@@ -15,7 +15,7 @@ int main()
 {
     int N,i,X,key1,key2;
     MFP A=NULL;
-    printf("ÇëÊäÈëÔªËØ¸öÊı:");
+    printf("è¯·è¾“å…¥å…ƒç´ ä¸ªæ•°:");
     scanf("%d",&N);
     A=(MFP)malloc((N+1)*sizeof(MF));
     Creat(A,N);
@@ -29,14 +29,14 @@ int main()
         UNion(A,key1,key2);
     }
 
-    printf("\n²¢Ö®ºóµÄ¼¯ºÏÎª:element,father,count\n");
+    printf("\nå¹¶ä¹‹åçš„é›†åˆä¸º:element,father,count\n");
     for(i=1;i<=N;i++)
     {
         printf("%d %d\n",A[i].element,A[i].father);
     }
-    printf("ÇëÊäÈë²éÕÒµÄÔªËØ:");
+    printf("è¯·è¾“å…¥æŸ¥æ‰¾çš„å…ƒç´ :");
     scanf("%d",&X);
-    printf("¸ÃÔªËØµÄ¸¸Ç×½ÚµãÎª:\n");
+    printf("è¯¥å…ƒç´ çš„çˆ¶äº²èŠ‚ç‚¹ä¸º:\n");
     printf("\n%d",Find(A,X));
     return 0;
 }
@@ -77,7 +77,9 @@ void Creat(MFP A,int N)
     }
 }
 
-
+public void printsttt(){
+        System.out.print("qweqwrqewtrdsaerty");
+    }
 
 
 
