@@ -25,3 +25,6 @@ void GetDate(PArray A)
 {
 
 }
+public void printsttt(){
+        System.out.print("qweqwrqewtrdsaerty");
+    }
