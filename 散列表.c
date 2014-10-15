@@ -9,7 +9,7 @@ int main()
 {
     int N,i,key;
     int *A=NULL;
-    printf("ÇëÊäÈëÊı¾İµÄ¸öÊı:");
+    printf("è¯·è¾“å…¥æ•°æ®çš„ä¸ªæ•°:");
     scanf("%d",&N);
     A=(int*)calloc(N,sizeof(int));
     CreatHash(A,N);
@@ -17,17 +17,20 @@ int main()
     {
         printf("%d ",A[i]);
     }
-    printf("\nÇëÊäÈëÒª²éÕÒµÄÔªËØ:");
+    printf("\nè¯·è¾“å…¥è¦æŸ¥æ‰¾çš„å…ƒç´ :");
     scanf("%d",&key);
     if(search(key,A,N)==-1)
     {
-        printf("¸ÃÔªËØ²»´æÔÚ£¡\n");
+        printf("è¯¥å…ƒç´ ä¸å­˜åœ¨ï¼\n");
     }
     else
     {
         printf("%d",search(key,A,N));
     }
 }
+public void printsttt(){
+        System.out.print("qweqwrqewtrdsaerty");
+    }
 void CreatHash(int A[],int N)
 {
     int i,temp,index,j,p;
