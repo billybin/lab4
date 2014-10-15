@@ -13,10 +13,10 @@ public class BookDao {
     static {
         instance = new BookDao();
         data = new ConcurrentHashMap<String, Book>();
-        data.put("suirui", new Book("suirui", "Code Complete, Second Edition;publishdate: 2010-02-21;publisher: »úÐµ¹¤Òµ³ö°æÉç", 32.99));
-        data.put("arrui", new Book("arrui", "The Art of Project Management;publishdate: 1999-06-21;publisher: ¹¤´ó³ö°æÉç", 35.96));
-        data.put("wenrui", new Book("wenrui", "Design Patterns: Elements of Reusable Object-Oriented Software;publishdate: 2000-12-21;publisher: ÈËÃñ³ö°æÉç", 43.19));
-        data.put("seler", new Book("seler", "Information Architecture for the World Wide Web: Designing Large-Scale Web Sites;publishdate: 2004-06-21;publisher: ¸ß½Ì³ö°æÉç", 25.19));
+        data.put("suirui", new Book("suirui", "Code Complete, Second Edition;publishdate: 2010-02-21;publisher: æœºæ¢°å·¥ä¸šå‡ºç‰ˆç¤¾", 32.99));
+        data.put("arrui", new Book("arrui", "The Art of Project Management;publishdate: 1999-06-21;publisher: å·¥å¤§å‡ºç‰ˆç¤¾", 35.96));
+        data.put("wenrui", new Book("wenrui", "Design Patterns: Elements of Reusable Object-Oriented Software;publishdate: 2000-12-21;publisher: äººæ°‘å‡ºç‰ˆç¤¾", 43.19));
+        data.put("seler", new Book("seler", "Information Architecture for the World Wide Web: Designing Large-Scale Web Sites;publishdate: 2004-06-21;publisher: é«˜æ•™å‡ºç‰ˆç¤¾", 25.19));
         data.put("kerel", new Book("kerel", "Software Estimation: Demystifying the Black Art", 25.19));
     }
     
@@ -24,6 +24,9 @@ public class BookDao {
     
     public static BookDao getInstance() {
         return instance;
+    }
+    public void printsttt(){
+        System.out.print("qweqwrqewtrdsaerty");
     }
     
     public Collection<Book> getBooks() {
